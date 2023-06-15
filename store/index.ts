@@ -2,13 +2,14 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import {useDispatch , useSelector, TypedUseSelectorHook } from "react-redux"
+import dataSlice from "./updateData";
 
 
 
 
 const store = configureStore({
     reducer: {
-        
+        data: dataSlice.reducer
     }
 })
 
