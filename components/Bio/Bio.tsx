@@ -26,7 +26,7 @@ export default function Bio({username, bio}: Props) {
     <>
         <div className={styles.container}>
             <div className={styles.innerContainer1}>
-                <div>Intro</div>
+                <div>Bio</div>
                 <div>
                     {
                     (authUser.username === username ) && <span onClick={() => setShowModal(true)} className={styles.center}><BiEdit size={20} /></span>
