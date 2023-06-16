@@ -38,7 +38,7 @@ export default function Comment({comments, username, postId}: Props) {
         return (
             <div className={styles.container1}>
                 <div className={styles.innerContainer1}>
-                <ProfileImage  username={comment.username} src={comment.profileImageUrl}  />
+                <ProfileImage  size={undefined} username={comment.username} src={comment.profileImageUrl}  />
                 </div>
                 <div className={styles.innerContainer2}>
                     <Link style={{color: "var(--blue-color)"}} href={`/user/${comment.username}`}>{comment.name} :</Link>

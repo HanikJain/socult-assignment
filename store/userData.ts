@@ -289,7 +289,7 @@ const USERS: User[] = [
     {id: 3, userDetails: user3, posts: [post3], following : [user2, user1, user4], bio: bio3},
     {id: 4, userDetails: user4, posts: [post4], following : [user3, user5, user7 ], bio: bio4},
     {id: 5, userDetails: user5, posts: [post5], following : [user3, user4, user6], bio: bio5},
-    {id: 6, userDetails: user6, posts: [post6], following : [user3, user4, user6, user7],  bio: bio6},
+    {id: 6, userDetails: user6, posts: [post6], following : [user3, user4, user7],  bio: bio6},
     {id: 7, userDetails: user7, posts: [post7], following : [user3, user4, user6, user5],  bio: bio7},
 ]
 

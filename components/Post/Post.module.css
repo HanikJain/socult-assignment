@@ -73,7 +73,7 @@
 }
 
 .profileContainer2 {
-    width: 100%;
+    width: calc(100% - 30px);
     padding: 0.5rem
 }
 
@@ -110,7 +110,10 @@
 
 .innerContainer2 {
     width: 30%;
-    
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 1rem;
+    align-items: center;
 }
 
 .username {
@@ -118,4 +121,14 @@
     font-weight: 300;
 
     color: var(--light-gray)
+}
+
+
+.inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0.3rem;
+
+    cursor: pointer;
 }

@@ -20,6 +20,7 @@
 
     display: grid;
     grid-template-columns: 25% calc(50% - 2rem) 25%;
+    grid-template-rows: 1fr;
     gap: 1rem;   
 }
 

@@ -2,9 +2,11 @@ import type { NextPage } from 'next'
 import styles from '../styles/Home.module.css'
 import useUser from '../hooks/useUser'
 import GridLayout from '../components/GridLayout'
+
 import {User, Post as PostType} from "../store/userTypes";
 
 import Post from '../components/Post/Post'
+import Recommendation from '../components/Recommendation/Recommendation';
 
 
 const Home: NextPage = () => {
@@ -25,7 +27,7 @@ const Home: NextPage = () => {
               {(!authUser.feed || authUser.feed.length === 0) && (<p>Nothing to show!</p>) }
               {(authUser.feed)  && authUser.feed.map(renderFeed) }
         </div>
-        <div style={{width: '100%', height: '500px', backgroundColor: 'green'}}></div>
+        <Recommendation title={"Recommendations"} recommendations={authUser.recommendations} />
     </GridLayout>
   )
 }

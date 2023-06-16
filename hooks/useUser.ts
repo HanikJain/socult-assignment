@@ -97,14 +97,118 @@ export default function useUser() {
 		dispatch(dataActions.updateBio(bio));
 	}
 
+	function updateLike(username: string, postId: number){
+		
+		cloneUsers.forEach(user => {
+			if(user.userDetails.username === username) {
+				
+				user.posts.forEach((post) => {
+					if(post.id === postId){
+						if(post.isLiked){
+							post.isLiked = false;
+							post.likes = post.likes - 1;
+						} else {
+							post.isLiked = true;
+							post.likes = post.likes + 1;
+						}
+						
 
+						if(post.isDisliked) {
+							post.isDisliked = false;
+							post.dislikes = post.dislikes - 1;
+						}
+						
+					}
+				})
+		
+			}
+		});
+
+		dispatch(dataActions.updateState(cloneUsers));
+
+	}
+
+	function updateDisLike(username: string, postId: number){
+		
+		cloneUsers.forEach(user => {
+			if(user.userDetails.username === username) {
+				
+				user.posts.forEach((post) => {
+				
+					if(post.id === postId){
+
+						if(post.isDisliked) {
+							post.isDisliked = false;
+							post.dislikes = post.dislikes - 1;
+						} else {
+							post.isDisliked = true;
+							post.dislikes = post.dislikes + 1;
+						}
+
+						if(post.isLiked) {
+							post.isLiked = false;
+							post.likes = post.likes - 1;
+						}
+						
+					}
+				})
+		
+			}
+		});
+
+		dispatch(dataActions.updateState(cloneUsers));
+	}
+
+	function follow(username: string){
+		
+		cloneUsers.forEach(user => {
+			if(user.userDetails.username === username) {
+				if(!user.userDetails.isFollowing && user.userDetails.isFollowing !== null){
+					const authUser = getAuthUser();
+
+					user.userDetails.isFollowing = true;
+					user.following?.push(authUser.userDetails);
+					authUser.following?.push(user.userDetails);
+					// let updatedRecList = authUser.recommendations?.filter(user => user.username !== username);
+					// authUser.recommendations = updatedRecList;
+
+
+				}
+			}
+		});
+
+		cloneUsers[0] = authUser;
+		dispatch(dataActions.updateState(cloneUsers));
+	}
+
+	function getFollowerCount(username: string): number {
+		let count = 0;
+		cloneUsers.forEach(user => {
+			if(user.userDetails.username !== username) {
+				if(user.following) {
+					user.following.forEach(following => {
+						if(following.username === username)
+							count++;	
+					})
+				}
+					
+			}
+		});
+
+
+		return count;
+	}
 	return {
 		getAuthUserDetails,
 		getAuthUser,
 		getUser,
 		followUser,
 		addComment,
-		updateBio
+		updateBio,
+		updateDisLike,
+		updateLike,
+		follow,
+		getFollowerCount,
 	}
 
 }
