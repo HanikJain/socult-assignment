@@ -69,43 +69,43 @@ const user7: UserDetails = {
 }
 
 let bio: Bio = {
-    worked: ["Worked for Socult", "Summer Internship at Tesla"],
+    worked:  "Summer Internship at Tesla",
     school: "Went to A.B.C school",
     college: "Studied at University of Mumbai",
 }
 
 let bio2: Bio = {
-    worked: ["Worked for Socult", "Summer Internship at facebook"],
+    worked: "Worked for Socult",
     school: "Went to A.B school",
     college: "Studied at University of Mumbai",
 }
 
 let bio3: Bio = {
-    worked: ["Worked for TCS", "Summer Internship at Google"],
+    worked: "Worked for TCS",
     school: "Went to A.C school",
     college: "Studied at University of Delhi",
 }
 
 let bio4: Bio = {
-    worked: ["Worked for Infosys", "Summer Internship at Google"],
+    worked: "Worked for Infosys",
     school: "Went to A.C.D.H school",
     college: "Studied at University of Delhi",
 }
 
 let bio5: Bio = {
-    worked: ["Worked for TCS", "Summer Internship at Google"],
+    worked:  "Summer Internship at Google",
     school: "Went to A.C.B school",
     college: "Studied at University of Mumbai",
 }
 
 let bio6: Bio = {
-    worked: ["Worked for Wipro", "Summer Internship at Amazon"],
+    worked: "Worked for Wipro",
     school: "Went to A.C school",
     college: "Studied at University of Chennai",
 }
 
 let bio7: Bio = {
-    worked: ["Worked for Amazon", "Summer Internship at Google"],
+    worked: "Worked for Amazon",
     school: "Went to G.A.C. school",
     college: "Studied at IIT Delhi",
 }

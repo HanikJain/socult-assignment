@@ -2,14 +2,16 @@ import React from 'react'
 import { useRouter } from 'next/router';
 import GridLayout from '../../components/GridLayout';
 import useUser from '../../hooks/useUser';
-import Recommendation from '../../components/Recommendation/Recommendation';
+
 import ProfileImage from '../../components/Profile/ProfileImage';
 import FollowBtn from '../../components/Post/FollowBtn';
 import styles from "./user.module.css"
 
 import {User, Post as PostType} from "../../store/userTypes";
 
+import Bio from "../../components/Bio/Bio"
 import Post from '../../components/Post/Post'
+import Recommendation from '../../components/Recommendation/Recommendation';
 
 type Props = {}
 
@@ -49,7 +51,7 @@ export default function UserProfile({}: Props) {
 
   return (
     <GridLayout >
-        <div></div>
+        <Bio username={currUser ? currUser.userDetails.username  as string : ''}  bio={currUser?.bio}/>
         <div className={styles.container}>
             <div className={styles.coverContainer}>
                 <img src={currUser?.userDetails.coveredImageUrl} alt="Cover Image" />
@@ -81,7 +83,7 @@ export default function UserProfile({}: Props) {
                 </div>
             </div>
             <div>
-                <h3>TimeLine</h3>
+                <h3 style={{marginLeft: "1rem"}}>Timeline</h3>
                 <div>
                     {
                         currUser?.posts && 

@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    max-width: 350px;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: auto;
+    box-shadow: rgba(201, 201, 201, 0.447) 0px 4px 12px;
+
+
+}
+
+.innerContainer1 {
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin: 1rem 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    cursor: pointer;
+}
+
+.container2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    column-gap: 1rem;
+}

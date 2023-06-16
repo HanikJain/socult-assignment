@@ -1,0 +1,57 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    background-color: rgba(91, 112, 131, 0.4);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 8vh;
+    left: 5%;
+    width: 90%;
+    max-height: 400px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: rgba(201, 201, 201, 0.447) 0px 4px 12px;
+    z-index: 3000;
+    animation: slide-down 300ms ease-out forwards;
+    overflow-y: scroll; 
+    color: var(--wt-color);
+    
+  }
+
+
+
+.modal::-webkit-scrollbar {
+    display: none;
+    
+}
+
+.modal{
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+}
+
+  
+  @media (min-width: 768px) {
+    .modal {
+      width: 40rem;
+      left: calc(50% - 20rem);
+    }
+  }
+  
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

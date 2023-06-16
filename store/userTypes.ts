@@ -34,7 +34,7 @@ export type Post = {
 }
 
 export type Bio = {
-    worked?: string[],
+    worked?: string,
     school?: string,
     college?: string,
     location?: string,

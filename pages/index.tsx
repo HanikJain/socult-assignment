@@ -5,6 +5,7 @@ import GridLayout from '../components/GridLayout'
 
 import {User, Post as PostType} from "../store/userTypes";
 
+import Bio from "../components/Bio/Bio"
 import Post from '../components/Post/Post'
 import Recommendation from '../components/Recommendation/Recommendation';
 
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
     
   return (
     <GridLayout>
-        <div style={{width: '100%', height: '500px', backgroundColor: 'red'}}></div>
+        <Bio username={authUser.userDetails.username} bio={authUser.bio}/>
         <div className={styles.feedContainer}>
               <h1 className={styles.title} >Your Feed</h1>
               {(!authUser.feed || authUser.feed.length === 0) && (<p>Nothing to show!</p>) }
