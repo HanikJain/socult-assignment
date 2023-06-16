@@ -10,6 +10,8 @@
 
 ## Live URL
 
+https://socult-assignment.vercel.app/
+
 ## Features
 
 - Build a webpage using Next.js typescript components
