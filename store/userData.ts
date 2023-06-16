@@ -3,7 +3,7 @@ import { UserDetails, User, Bio, Post, Comment } from "./userTypes";
 
 const user1: UserDetails = {
     id: 1,
-    name: "HanikJain",
+    name: "Hanik Jain",
     username: "hanikjain",
     profileImageUrl: "https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg",
     coveredImageUrl: "https://marketplace.canva.com/EAE6i81Zo60/1/0/1600w/canva-blue-minimalist-linktree-background-4jrZHAehe7I.jpg",
@@ -24,7 +24,7 @@ const user3: UserDetails = {
     id: 3,
     name: "John Smith",
     username: "john123",
-    profileImageUrl: "https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg",
+    profileImageUrl: "https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg",
     coveredImageUrl: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     isFollowing: true
 }
@@ -114,6 +114,7 @@ const comment1: Comment = {
     id: 1,
     comment: "Amazing photo!!!",
     name: user2.name,
+    username: user2.username,
     profileImageUrl:  user2.profileImageUrl,
 }
 
@@ -121,6 +122,7 @@ const comment2: Comment = {
     id: 2,
     comment: "Wow!, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
     name: user2.name,
+    username: user2.username,
     profileImageUrl:  user2.profileImageUrl,
 }
 
@@ -129,6 +131,7 @@ const comment3: Comment = {
     id: 3,
     comment: "Haha, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
     name: user3.name,
+    username: user3.username,
     profileImageUrl:  user3.profileImageUrl,
 }
 
@@ -137,6 +140,7 @@ const comment4: Comment = {
     id: 4,
     comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
     name: user4.name,
+    username: user4.username,
     profileImageUrl:  user4.profileImageUrl,
 }
 
@@ -145,6 +149,7 @@ const comment5: Comment = {
     id: 5,
     comment: "Amazing, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
     name: user5.name,
+    username: user5.username,
     profileImageUrl:  user5.profileImageUrl,
 }
 
@@ -158,6 +163,8 @@ let post8: Post = {
     userDetails: user1,
     likes: 110,
     dislikes: 19,
+    isLiked: false,
+    isDisliked: false,
     comments: [comment4]
 }
 
@@ -171,6 +178,8 @@ let post1: Post = {
     userDetails: user1,
     likes: 27,
     dislikes: 3,
+    isLiked: false,
+    isDisliked: false,
     comments: [comment1, comment2, comment3]
 }
 
@@ -185,6 +194,8 @@ let post2: Post = {
     userDetails: user2,
     likes: 11,
     dislikes: 0,
+    isLiked: false,
+    isDisliked: false,
     comments: [comment4, comment5, comment3]
 }
 
@@ -199,6 +210,8 @@ let post3: Post = {
     userDetails: user3,
     likes: 11,
     dislikes: 19,
+    isLiked: false,
+    isDisliked: false,
     comments: []
 }
 
@@ -213,6 +226,8 @@ let post4: Post = {
     userDetails: user4,
     likes: 7,
     dislikes: 0,
+    isLiked: false,
+    isDisliked: false,
     comments: []
 }
 
@@ -227,6 +242,8 @@ let post5: Post = {
     userDetails: user5,
     likes: 0,
     dislikes: 0,
+    isLiked: false,
+    isDisliked: false,
     comments: []
 }
 
@@ -240,6 +257,8 @@ let post6: Post = {
     userDetails: user6,
     likes: 2,
     dislikes: 30,
+    isLiked: false,
+    isDisliked: false,
     comments: [comment1, comment2, comment3]
 }
 
@@ -254,6 +273,8 @@ let post7: Post = {
     userDetails: user7,
     likes: 1110,
     dislikes: 39,
+    isLiked: false,
+    isDisliked: false,
     comments: [comment1, comment2, comment3, comment4, comment5]
 }
 

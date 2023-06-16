@@ -13,6 +13,7 @@ export interface Comment {
     id: number,
     comment: string,
     name: string,
+    username: string,
     profileImageUrl: string,
     
 }
@@ -27,7 +28,9 @@ export type Post = {
     userDetails: UserDetails,
     likes: number,
     dislikes: number,
-    comments?: Comment[],
+    isLiked: boolean,
+    isDisliked: boolean,
+    comments: Comment[],
 }
 
 export type Bio = {

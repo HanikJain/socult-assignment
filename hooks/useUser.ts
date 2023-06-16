@@ -8,8 +8,9 @@ import { dataActions } from '../store/updateData';
 export default function useUser() {
 
 	const USERS = useAppSelector(state => state.data.users);
+	const cloneUsers = structuredClone(USERS)
 	
-	const authUser: User = USERS[0];
+	const authUser: User = cloneUsers[0];
 
 	const dispatch = useAppDispatch();
 	
@@ -23,7 +24,7 @@ export default function useUser() {
 
 
 	function getUser(username: string): User | null{
-		let user = USERS.filter(user => user.userDetails.username === username);
+		let user = cloneUsers.filter(user => user.userDetails.username === username);
 		if(user.length === 0) {
 			return null;
 		}
@@ -34,7 +35,7 @@ export default function useUser() {
 	function followUser(username: string) {
 		let following = false;
 
-		USERS.forEach(user => {
+		cloneUsers.forEach(user => {
 			if(user.userDetails.username === username) {
 				user.userDetails.isFollowing = true;
 				let currDetails: UserDetails = getAuthUserDetails()
@@ -44,7 +45,7 @@ export default function useUser() {
 		});
 
 
-		dispatch(dataActions.updateState(USERS));
+		dispatch(dataActions.updateState(cloneUsers));
 	   
 	   
 		
@@ -53,9 +54,12 @@ export default function useUser() {
 
 
 	function addComment(username: string, postId: number, userComment: string) {
+
 		
-		USERS.forEach(user => {
+		
+		cloneUsers.forEach(user => {
 			if(user.userDetails.username === username) {
+				
 				user.posts.forEach((post) => {
 					if(post.id === postId){
 						let id: number = 0;
@@ -71,11 +75,12 @@ export default function useUser() {
 							comment: userComment,
 							name: currDetails.name,
 							profileImageUrl:  currDetails.profileImageUrl,
+							username: currDetails.username,
 
 
 						} 
 
-						post.comments?.push(comment);
+						post.comments = [...post.comments, comment]
 
 					}
 				})
@@ -84,7 +89,7 @@ export default function useUser() {
 		});
 
 
-		dispatch(dataActions.updateState(USERS));
+		dispatch(dataActions.updateState(cloneUsers));
 	}
 
 
